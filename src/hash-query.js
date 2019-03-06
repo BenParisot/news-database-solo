@@ -1,6 +1,6 @@
-export function searchToURL(existingQuery, searchValue) {
+export function searchToURL(existingQuery, q) {
     const searchParams = new URLSearchParams(existingQuery);
-    searchParams.set('searchValue', searchValue);
+    searchParams.set('q', q);
     return searchParams.toString();
 }
 
@@ -13,10 +13,10 @@ export function pageToURL(existingQuery, newPage) {
 
 export function queryToObject(existingQuery) {
     const searchParams = new URLSearchParams(existingQuery);
-    const searchValue = searchParams.get('searchValue');
+    const q = searchParams.get('q');
     const page = parseInt(searchParams.get('page'));
     return {
-        searchValue: searchValue,
+        q: q,
         page: page
     };
 }
