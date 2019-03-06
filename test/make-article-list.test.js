@@ -1,3 +1,5 @@
+import { makeArticleList } from '../src/make-article-list.js';
+
 const test = QUnit.test;
 
 const article = {
@@ -14,20 +16,7 @@ const article = {
     'content': 'If youre a Coinbase user, you may have seen some new tokens on your account. The Bitcoin Cash chain split into two different chains back in November. It means that if you held Bitcoin Cash on November 15, you became the lucky owner of Bitcoin SV and Bitcoin A… [+1514 chars]'
 };
 
-function makeArticleList(article) {
-    const html = `
-    <li>
-                <img src="${article.urlToImage}">
-                <h2>${article.title}</h2>
-                <p>by ${article.author}</p>
-                <p>${article.description}</p>
-                <p>Read more on <a href="${article.url}">${article.source.name}</a>.</p>
-            </li>`;
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    return template.content;
 
-}
 
 test('make list of articles from template', assert => {
     
