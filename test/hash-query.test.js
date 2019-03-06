@@ -1,27 +1,5 @@
+import { searchToURL, pageToURL, queryToObject } from '../src/hash-query.js';
 const test = QUnit.test;
-
-function searchToURL(existingQuery, searchValue) {
-    const searchParams = new URLSearchParams(existingQuery);
-    searchParams.set('searchValue', searchValue);
-    return searchParams.toString();
-}
-
-function pageToURL(existingQuery, newPage) {
-    const searchParams = new URLSearchParams(existingQuery);
-    searchParams.set('page', newPage);
-    return searchParams.toString();
-
-}
-
-function queryToObject(existingQuery) {
-    const searchParams = new URLSearchParams(existingQuery);
-    const searchValue = searchParams.get('searchValue');
-    const page = parseInt(searchParams.get('page'));
-    return {
-        searchValue: searchValue,
-        page: page
-    };
-}
 
 test('add search value to empty query in url', assert => {
     const searchValue = 'bitcoin';
