@@ -7,16 +7,14 @@ import './pagination-component.js';
 
 updateSearchTerm();
 
-window.addEventListener('hashchange', () => {
-    const query = window.location.hash.slice(1);
-    const queryOptions = queryToObject(query);
-    console.log(queryOptions);
-
-    const URL = makeSearchArticlesURL(queryOptions);
-    fetch(URL)
-        .then(response => response.json())
-        .then(response => {
-            loadArticles(response.articles);
-            updatePaging(queryOptions.page, response.totalResults);
-        });
-});
+// window.addEventListener('hashchange', () => {
+//     const query = window.location.hash.slice(1);
+//     const queryOptions = queryToObject(query);
+//     const URL = makeSearchArticlesURL(queryOptions);
+//     fetch(URL)
+//         .then(response => response.json())
+//         .then(response => {
+//             loadArticles(response.articles);
+//             updatePaging(queryOptions.page, response.totalResults);
+//         });
+// });

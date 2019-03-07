@@ -22,7 +22,7 @@ test('make list of articles from template', assert => {
     
     const expected = `
     <li>
-                <img src="https://techcrunch.com/wp-content/uploads/2017/08/bitcoin-split-2017a.jpg?w=711">
+                <img src="${article.urlToImage}" onerror="this.onerror=null;this.src='https://ak6.picdn.net/shutterstock/videos/1418746/thumb/5.jpg';">
                 <h2>Coinbase users can now withdraw Bitcoin SV following BCH fork</h2>
                 <p>by Romain Dillet</p>
                 <p>If you’re a Coinbase user, you may have seen some new tokens on your account. The Bitcoin Cash chain split into two different chains back in November. It means that if you held Bitcoin Cash on November 15, you became the lucky owner of Bitcoin SV and Bitcoin …</p>
