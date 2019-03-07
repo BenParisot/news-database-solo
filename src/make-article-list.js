@@ -1,7 +1,7 @@
 export function makeArticleList(article) {
     const html = `
     <li>
-                <img src="${article.urlToImage}">
+                <img src="${article.urlToImage}" onerror="this.onerror=null;this.src='https://ak6.picdn.net/shutterstock/videos/1418746/thumb/5.jpg';">
                 <h2>${article.title}</h2>
                 <p>by ${article.author}</p>
                 <p>${article.description}</p>

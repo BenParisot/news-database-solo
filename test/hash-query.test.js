@@ -4,7 +4,7 @@ const test = QUnit.test;
 test('add search value to empty query in url', assert => {
     const q = 'bitcoin';
     const existingQuery = '';
-    const expected = 'q=bitcoin';
+    const expected = 'q=bitcoin&page=1';
 
     const result = searchToURL(existingQuery, q);
 
@@ -14,7 +14,7 @@ test('add search value to empty query in url', assert => {
 test('add search value to existing query in url', assert => {
     const q = 'elephant';
     const existingQuery = 'q=bitcoin';
-    const expected = 'q=elephant';
+    const expected = 'q=elephant&page=1';
     const result = searchToURL(existingQuery, q);
 
     assert.equal(result, expected);
