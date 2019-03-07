@@ -1,3 +1,5 @@
+import { pageToURL } from './hash-query.js';
+
 const previousButtonNode = document.getElementById('previous-button');
 const nextButtonNode = document.getElementById('next-button');
 const currentPageNode = document.getElementById('current-page');
@@ -16,3 +18,21 @@ export function updatePaging(page, totalResults) {
     currentPageNode.textContent = currentPage;
     totalPagesNode.textContent = totalPages;
 }
+
+previousButtonNode.addEventListener('click', () => {
+    const existingQuery = window.location.hash.slice(1);
+    const searchParams = new URLSearchParams(existingQuery);
+    const currentPage = searchParams.get('page');
+    console.log(existingQuery, currentPage);    
+});
+
+nextButtonNode.addEventListener('click', () => {
+    const existingQuery = window.location.hash.slice(1);
+    const searchParams = new URLSearchParams(existingQuery);
+    let currentPage = searchParams.get('page');
+    currentPage++;
+    const newURL = pageToURL(existingQuery, currentPage);
+    window.location.hash = newURL;
+    console.log(existingQuery, currentPage);    
+
+});
