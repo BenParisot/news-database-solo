@@ -12,10 +12,10 @@ window.addEventListener('hashchange', () => {
     console.log(queryOptions);
 
     const URL = makeSearchArticlesURL(queryOptions);
-    fetch(URL)
-        .then(response => response.json())
-        .then(response => {
-            loadArticles(response.articles);
-            updatePaging(response.totalResults);
-        });
+    // fetch(URL)
+    //     .then(response => response.json())
+    //     .then(response => {
+    //         loadArticles(response.articles);
+    //         updatePaging(response.totalResults);
+    //     });
 });

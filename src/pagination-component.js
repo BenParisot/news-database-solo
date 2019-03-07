@@ -10,7 +10,9 @@ let totalPages = 6;
 
 //total pages needs to equal total results / 20
 
-export function updatePaging(totalResults) {
+export function updatePaging(page, totalResults) {
+    const currentPage = page;
     const totalPages = Math.ceil(totalResults / 20);
+    currentPageNode.textContent = currentPage;
     totalPagesNode.textContent = totalPages;
 }
